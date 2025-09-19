@@ -28,6 +28,9 @@ public class Invoice {
     @Column(nullable = false, length = 60)
     private String customerId;
 
+    @Column(name="due_date", nullable=false)
+    private LocalDate dueDate;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 16)
     private InvoiceStatus status;

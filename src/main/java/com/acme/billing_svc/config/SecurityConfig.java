@@ -36,6 +36,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(registry -> registry
                 .requestMatchers("/actuator/health").permitAll()
+                .requestMatchers("/invoices/**").hasRole("BILLING_USER")
                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
         );
