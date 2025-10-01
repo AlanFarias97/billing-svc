@@ -4,3 +4,5 @@ spring:
   # Para que tome Config Server desde env
   config:
     import: optional:configserver:${SPRING_CONFIG_IMPORT:}
+management:
+  endpoints.web.exposure.include: health,info,metrics,prometheus
